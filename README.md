@@ -1,11 +1,15 @@
 # 2024-PARIS SUMMER OLYMPIC MEDAL POSITIONS AND RANKINGS
 [Dashboard link](https://app.powerbi.com/reportEmbed?reportId=87ca575f-f184-4550-8b8c-d7afc6b6a1c8&autoAuth=true&ctid=e0793d39-0939-496d-b129-198edd916feb)
-
+ 
 ### Project Overview
 
 The data highlights trends such as the concentration of medal achievements in North America, Asia, and Europe while showcasing the contributions of smaller nations. 
 It sets the stage for analyzing regional strengths, sports-specific performances, and the overall global athletic landscape at the 2024 Olympics. 
 This snapshot reflects the dedication and achievements of athletes worldwide.
+
+
+![Dasboard overview](https://github.com/user-attachments/assets/7aee3d55-2725-422a-af28-e4f46d47770b)
+
 
 ### Key Objectives
 -The ratio of gold, silver, and bronze medals for each country
@@ -26,7 +30,9 @@ The dataset used for this analysis constitute the Paris 2024 summer olympic outc
 - Handling of Missing Data
 - Data cleaning and formating
 
-[Total Medals won]
+### Total Medals Won
+![Total Medals](https://github.com/user-attachments/assets/ab9cd72c-9606-4679-b4d3-f823ed84ffa0)
+
 
 ### Data Analysis
 Total medal won by country
@@ -36,6 +42,10 @@ select countries,
 from Olympic.dbo.paris_olympic
 group by countries
 order by total_medals_won desc;```
+
+![total medals won by countries](https://github.com/user-attachments/assets/94fc4c2e-0949-42b9-a809-0eeb5136cb0c)
+
+
 
 Percentage of gold medals won by each country
 ```SQL
@@ -47,7 +57,10 @@ from Olympic.dbo.paris_olympic
 group by countries
 order by Gold_percentage desc;```
 
+
+
 Medal Efficiency by Position
+
 ```SQL
 select  position,
 		sum(total_medals) as Gold_medals,
@@ -67,14 +80,21 @@ group by countries
 order by countries asc;
 
 The top 10 countries with the highest number of gold medals
+
 ```SQL
-select top 10 countries,
-sum(Gold) as top_10_Gold_Countries
+Select top 10 countries,
+	sum(Gold) as top_10_Gold_Countries
 from Olympic.dbo.paris_olympic
 group by countries
 order by top_10_Gold_Countries desc;```
 
+
+![top 10 Countries with Gold](https://github.com/user-attachments/assets/41492d85-51af-4dc6-a0f7-da3305ec1e7f)
+
+
+
 Medals per Country Ranking Efficiency
+
 ```SQL
 select position,
        countries,
@@ -84,6 +104,7 @@ group by countries, position
 order by medals_per_rank desc;```
 
 Medals by Continent (Geographic Distribution)
+
 select continent,
 	   sum(Gold) as total_gold,
 	   sum(Silver) as total_silver,
@@ -92,7 +113,10 @@ from Olympic.dbo.paris_olympic
 group by continent
 order by continent desc;```
 
+![by medals by continents](https://github.com/user-attachments/assets/bc5d4bc0-a19c-47e3-a475-9c1f6cee9808)
+
 Medal Distribution by Country Ranking
+
 ```SQL
 select Position, Countries,
 	   sum(Gold) as total_gold,
@@ -101,6 +125,11 @@ select Position, Countries,
 from Olympic.dbo.paris_olympic
 group by Position, Countries
 order by Position asc;```
+
+
+![total medals won by countries](https://github.com/user-attachments/assets/4341a46f-81f9-4169-a4df-6e67844910b4)
+
+
 
 # SUMMAR ANALYSIS
 The preliminary medal standings for the 2024 Paris Summer Olympics highlight a diverse distribution of achievements across continents, with a total of 30 countries represented.
