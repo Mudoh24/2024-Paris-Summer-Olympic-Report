@@ -69,6 +69,7 @@ from Olympic.dbo.paris_olympic
 group by position
 order by position;```
 
+
 Medal Type Distribution
 ```SQL
 select countries,
