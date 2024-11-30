@@ -88,9 +88,7 @@ from Olympic.dbo.paris_olympic
 group by countries
 order by top_10_Gold_Countries desc;```
 
-
-![top 10 Countries with Gold](https://github.com/user-attachments/assets/41492d85-51af-4dc6-a0f7-da3305ec1e7f)
-
+![top 10 Countries with Gold](https://github.com/user-attachments/assets/35065ca6-2443-4f31-b903-746c0a29f684)
 
 
 Medals per Country Ranking Efficiency
